@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>New Year's Eve 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link id="fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700&display=swap">
+<style id="css">
+/* Layout: a night-sky page. The hero is the countdown itself, the year as a huge outline behind it; below, frosted panels in a two-up grid that stacks on phones. Deliberately one dark look. */
+:root {
+  --sky: #0A1030; --sky-deep: #060920; --glow: #2B1F66;
+  --surface: rgba(255, 255, 255, 0.055); --surface-solid: #141A3D; --line: rgba(235, 199, 122, 0.22);
+  --ink: #F5EFE1; --muted: #AAB0CF; --gold: #EBC77A; --gold-hi: #FFE7B3; --gold-soft: rgba(235, 199, 122, 0.14);
+  --ok: #86E3AE; --ok-soft: rgba(134, 227, 174, 0.14); --warn: #FFA387; --warn-soft: rgba(255, 163, 135, 0.14);
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+body {
+  background-color: var(--sky);
+  background-image: radial-gradient(1100px 620px at 50% -12%, var(--glow) 0%, transparent 62%), linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 100%);
+  background-attachment: fixed;
+  color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; min-height: 100vh;
+}
+#sky { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+#root {
+  position: relative; z-index: 1;
+  max-width: 1000px; margin: 0 auto;
+  padding-block: 36px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 22px;
+}
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; text-transform: uppercase; }
+h2 { font-size: 1.9rem; font-weight: 800; letter-spacing: 0.01em; line-height: 1; }
+p { margin: 0; }
+a { color: var(--gold); }
+.eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.muted { color: var(--muted); }
+
+/* hero */
+.hero { position: relative; display: grid; gap: 22px; padding-block: 18px 8px; text-align: center; justify-items: center; }
+.hero .year {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -54%); z-index: -1;
+  font-family: var(--display); font-weight: 900; font-size: clamp(9rem, 34vw, 22rem); line-height: 0.8;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(235, 199, 122, 0.16); letter-spacing: -0.02em; white-space: nowrap; user-select: none;
+}
+.hero h1 {
+  font-size: clamp(3rem, 11vw, 6.4rem); font-weight: 900; line-height: 0.88; letter-spacing: 0.005em;
+  background: linear-gradient(180deg, var(--gold-hi) 10%, var(--gold) 90%); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .note { max-width: 52ch; color: var(--muted); }
+.countdown { display: flex; gap: clamp(8px, 2.5vw, 18px); justify-content: center; flex-wrap: wrap; min-height: 112px; }
+.unit {
+  display: grid; justify-items: center; min-width: clamp(70px, 19vw, 118px); padding: 12px 8px 10px;
+  border: 1px solid var(--line); border-radius: 14px; background: var(--surface); backdrop-filter: blur(6px);
+}
+.unit .n { font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 9vw, 4.4rem); line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.unit .u { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.stay { display: grid; justify-items: center; gap: 8px; }
+.stay-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.stay-days { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.night {
+  display: flex; align-items: baseline; gap: 8px; padding: 7px 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--gold-soft);
+}
+.night .wd { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.night .dm { font-family: var(--display); font-weight: 800; font-size: 1.3rem; line-height: 1; color: var(--gold-hi); font-variant-numeric: tabular-nums; }
+.cheers { font-family: var(--display); font-weight: 900; font-size: clamp(2.6rem, 9vw, 4.4rem); color: var(--gold-hi); text-transform: uppercase; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 22px; }
+.panel {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px;
+  display: grid; gap: 16px; align-content: start; min-width: 0; backdrop-filter: blur(8px);
+}
+.panel.wide { grid-column: 1 / -1; }
+.panel-head { display: grid; gap: 6px; }
+.empty { color: var(--muted); font-style: italic; }
+.place-name { font-size: 1.35rem; font-weight: 700; }
+
+.btn {
+  font: inherit; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 11px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.btn.primary { background: linear-gradient(180deg, var(--gold-hi), var(--gold)); border-color: transparent; color: var(--sky-deep); }
+.btn.primary:hover { box-shadow: 0 0 0 4px var(--gold-soft), 0 8px 28px rgba(235, 199, 122, 0.25); }
+.btn.small { padding: 7px 12px; font-size: 0.85rem; }
+.btn:hover { border-color: var(--gold); transform: translateY(-1px); }
+.btn:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.btn:disabled { opacity: 0.55; cursor: wait; transform: none; }
+.hero .btn { margin-top: 4px; }
+
+.rows { display: grid; }
+.row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-top: 1px solid rgba(255, 255, 255, 0.07); min-width: 0; }
+.row:first-child { border-top: 0; }
+.row .name { flex: 1; min-width: 0; overflow-wrap: anywhere; font-weight: 500; }
+.amount { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--gold-hi); }
+.chip { font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; white-space: nowrap; letter-spacing: 0.02em; }
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+.chip.warn { background: var(--warn-soft); color: var(--warn); }
+.chip.gold { background: var(--gold-soft); color: var(--gold); }
+
+.tally { display: flex; gap: 28px; flex-wrap: wrap; }
+.tally div { display: grid; }
+.tally b { font-family: var(--display); font-size: 2.3rem; line-height: 1; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--gold-hi); }
+.tally span { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+.bar { height: 10px; border-radius: 99px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--gold), var(--gold-hi)); box-shadow: 0 0 14px rgba(235, 199, 122, 0.5); }
+
+/* who has paid: one tile per person, two pips for the two halves of the payment */
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 10px; }
+.person {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px; min-width: 0;
+  border-radius: 12px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.avatar {
+  flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--display); font-weight: 800; font-size: 1.15rem; text-transform: uppercase;
+}
+.person .who { flex: 1; display: grid; min-width: 0; line-height: 1.25; }
+.pname { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pstatus { font-size: 0.78rem; font-weight: 600; }
+.halves { flex: none; display: flex; gap: 4px; }
+.halves i { width: 14px; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.12); }
+.person.ok .avatar { background: var(--ok-soft); color: var(--ok); }
+.person.ok .pstatus, .person.ok .halves i.on { color: var(--ok); background-color: transparent; }
+.person.ok .halves i.on { background: var(--ok); }
+.person.gold .avatar { background: var(--gold-soft); color: var(--gold-hi); }
+.person.gold .pstatus { color: var(--gold); }
+.person.gold .halves i.on { background: var(--gold); box-shadow: 0 0 8px rgba(235, 199, 122, 0.5); }
+.person.warn { border-color: rgba(255, 163, 135, 0.28); background: rgba(255, 163, 135, 0.06); }
+.person.warn .avatar { background: var(--warn-soft); color: var(--warn); }
+.person.warn .pstatus { color: var(--warn); }
+
+.pay { display: flex; gap: 20px; flex-wrap: wrap; align-items: start; }
+.pay-main { flex: 1 1 220px; display: grid; gap: 12px; min-width: 0; }
+.pay-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pay-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); min-width: 64px; }
+.pay-value { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 1rem; color: var(--gold-hi); overflow-wrap: anywhere; min-width: 0; }
+.qr { margin: 0; display: grid; justify-items: center; gap: 6px; }
+.qr img { width: 132px; height: 132px; background: #FFFFFF; border-radius: 12px; padding: 6px; box-sizing: border-box; }
+.qr figcaption { font-size: 0.78rem; color: var(--muted); }
+
+/* the food list reads like a menu card: item, dotted leader, who brings it */
+.menu-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 18px 36px; }
+.menu-groups h3 { margin: 0 0 4px; font-family: var(--display); font-weight: 800; font-size: 1.25rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); }
+.dish { display: flex; align-items: baseline; gap: 8px; padding: 7px 0; min-width: 0; }
+.dish .item { overflow-wrap: anywhere; min-width: 0; }
+.dish .lead { flex: 1; min-width: 16px; border-bottom: 2px dotted rgba(235, 199, 122, 0.3); transform: translateY(-4px); }
+.dish .votes {
+  flex: none; align-self: center; min-width: 28px; height: 24px; padding: 0 6px; box-sizing: border-box; border-radius: 8px;
+  display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; font-variant-numeric: tabular-nums;
+  background: var(--gold-soft); color: var(--gold-hi);
+}
+.dish .votes.zero { background: rgba(255, 255, 255, 0.06); color: var(--muted); }
+.dish .who { color: var(--muted); font-size: 0.92rem; text-align: right; overflow-wrap: anywhere; }
+
+
+.toast {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  background: var(--gold-hi); color: var(--sky-deep); padding: 10px 18px; border-radius: 999px; font-weight: 700;
+  max-width: calc(100% - 32px); z-index: 20; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 520px) { .panel { padding: 18px; } h2 { font-size: 1.6rem; } }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+<main id="root"></main>
+<script type="application/json" id="state">{"title":"New Year's Eve","date":"2026-12-31","time":"20:00","note":"22 people so far, the house sleeps 23. €120 each for all 3 nights: €60 now, €60 when we arrive.","stayFrom":"2026-12-31","nights":3,"place":"Guest house „Балканска песен“","address":"Voynezha village (с. Войнежа), about 30 km south of Veliko Tarnovo. The house is at the far end of the village; the last stretch is an old gravel road.","mapLink":"https://www.google.com/maps/place/%D0%9A%D1%8A%D1%89%D0%B0+%D0%B7%D0%B0+%D0%B3%D0%BE%D1%81%D1%82%D0%B8+%22%D0%91%D0%B0%D0%BB%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B0+%D0%BF%D0%B5%D1%81%D0%B5%D0%BD%22/@42.8805622,25.663463,17z/data=!3m1!4b1!4m6!3m5!1s0x40a8e700752b32d9:0x586c804ec94b0cc3!8m2!3d42.8805583!4d25.6660379!16s%2Fg%2F11w998wdcm?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D","houseLink":"https://www.facebook.com/p/%D0%9A%D1%8A%D1%89%D0%B0-%D0%B7%D0%B0-%D0%B3%D0%BE%D1%81%D1%82%D0%B8-%D0%91%D0%B0%D0%BB%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B0-%D0%BF%D0%B5%D1%81%D0%B5%D0%BD-61565935772420/","santaLink":"","santaNote":"To be created…","currency":"€","revolutLink":"https://revolut.me/vilin","revolutTag":"@vilin","iban":"BG15STSA93000023261584","payName":"Vilin Dimitrov","bank":"DSK Bank","perPerson":120,"money":[{"name":"Богдан","amount":60},{"name":"Митака","amount":60},{"name":"Ина","amount":0},{"name":"Красимира","amount":60},{"name":"Марто","amount":60},{"name":"Никол","amount":60},{"name":"Николай","amount":0},{"name":"Росен","amount":60},{"name":"Теодор","amount":60},{"name":"Теодора","amount":60},{"name":"Саша","amount":60},{"name":"Антония","amount":0},{"name":"Стан","amount":0},{"name":"Красимир","amount":60},{"name":"Красимира С.","amount":60},{"name":"Надя","amount":60},{"name":"Ники Бр.","amount":60},{"name":"Криса","amount":60},{"name":"Лидка","amount":60},{"name":"Вилин","amount":60},{"name":"Пепито / Дебора","amount":0},{"name":"Даниел","amount":0}],"menu":[]}</script>
+<script id="app">
+(() => {
+  const S = JSON.parse(document.getElementById('state').textContent);
+  const root = document.getElementById('root');
+  const KINDS = [['food', 'Food'], ['drinks', 'Drinks'], ['other', 'Other things']];
+
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const safeUrl = u => /^https?:\/\//i.test(String(u || '').trim()) ? String(u).trim() : '';
+  const num = v => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) ? n : 0; };
+  const money = n => (S.currency || '') + num(n).toLocaleString('en-GB', { minimumFractionDigits: num(n) % 1 ? 2 : 0, maximumFractionDigits: 2 });
+  const hostHint = what => `The host hasn't added ${what} yet.`;
+
+  function midnight() {
+    const d = new Date((S.date || '2026-12-31') + 'T00:00:00');
+    d.setDate(d.getDate() + 1);
+    return d;
+  }
+
+  function header() {
+    const d = new Date((S.date || '2026-12-31') + 'T12:00:00');
+    const when = d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }) + (S.time ? ' · from ' + esc(S.time) : '');
+    return `<header class="hero">
+      <span class="year" aria-hidden="true">${midnight().getFullYear()}</span>
+      <span class="eyebrow">${when}</span>
+      <h1>${esc(S.title || "New Year's Eve")}</h1>
+      <div class="countdown" id="cd" aria-label="Time until midnight"></div>
+      ${stay()}
+      ${S.note ? `<p class="note">${esc(S.note)}</p>` : ''}
+    </header>`;
+  }
+
+  function stay() {
+    const n = Math.round(num(S.nights));
+    if (!S.stayFrom || n < 1) return '';
+    const days = Array.from({ length: n }, (_, i) => { const d = new Date(S.stayFrom + 'T12:00:00'); d.setDate(d.getDate() + i); return d; });
+    const pad = x => String(x).padStart(2, '0');
+    return `<div class="stay"><span class="stay-label">${n} night${n === 1 ? '' : 's'} at the house</span><div class="stay-days">${days.map(d =>
+      `<div class="night"><span class="wd">${d.toLocaleDateString('en-GB', { weekday: 'short' })}</span><span class="dm">${pad(d.getDate())}.${pad(d.getMonth() + 1)}</span></div>`
+    ).join('')}</div></div>`;
+  }
+
+  function placePanel() {
+    const link = safeUrl(S.mapLink), house = safeUrl(S.houseLink);
+    const body = S.place || S.address || link || house
+      ? `${S.place ? `<p class="place-name">${esc(S.place)}</p>` : ''}
+         ${S.address ? `<p class="muted">${esc(S.address)}</p>` : ''}
+         ${link || house ? `<p style="display:flex;gap:10px;flex-wrap:wrap">
+           ${link ? `<a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener">Open in maps ↗</a>` : ''}
+           ${house ? `<a class="btn" href="${esc(house)}" target="_blank" rel="noopener">See the house ↗</a>` : ''}</p>` : ''}`
+      : `<p class="empty">${hostHint('the place')}</p>`;
+    return `<section class="panel"><div class="panel-head"><span class="eyebrow">Where</span><h2>The place</h2></div>${body}</section>`;
+  }
+
+  function santaPanel() {
+    const link = safeUrl(S.santaLink);
+    const body = link || S.santaNote
+      ? `${S.santaNote ? `<p>${esc(S.santaNote)}</p>` : ''}
+         ${link ? `<p><a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener">Draw your Secret Santa ↗</a></p>` : ''}`
+      : `<p class="empty">${hostHint('the Secret Santa link')}</p>`;
+    return `<section class="panel"><div class="panel-head"><span class="eyebrow">Gifts</span><h2>Secret Santa</h2></div>${body}</section>`;
+  }
+
+  function moneyPanel() {
+    const per = num(S.perPerson), list = S.money || [];
+    const got = list.reduce((a, m) => a + num(m.amount), 0);
+    const goal = per * list.length;
+    const paidCount = list.filter(m => num(m.amount) > 0).length;
+    const rows = list.map(m => {
+      const a = num(m.amount);
+      const halves = per ? Math.min(2, Math.floor(a / (per / 2) + 1e-9)) : (a > 0 ? 2 : 0);
+      const [cls, text] = halves === 2 ? ['ok', 'Paid in full'] : halves === 1 ? ['gold', `${money(per - a)} on arrival`] : ['warn', 'Not paid yet'];
+      return `<div class="person ${cls}">
+        <span class="avatar" aria-hidden="true">${esc([...m.name.trim()][0] || '?')}</span>
+        <span class="who"><span class="pname">${esc(m.name)}</span><span class="pstatus">${text}</span></span>
+        <span class="halves" role="img" aria-label="${halves} of 2 payments"><i class="${halves > 0 ? 'on' : ''}"></i><i class="${halves > 1 ? 'on' : ''}"></i></span>
+      </div>`;
+    }).join('');
+    const body = list.length
+      ? `<div class="tally">
+           <div><b>${money(got)}</b><span>collected${goal ? ' of ' + money(goal) : ''}</span></div>
+           ${per ? `<div><b>${money(per)}</b><span>per person</span></div>` : ''}
+           <div><b>${paidCount}/${list.length}</b><span>people have paid</span></div>
+         </div>
+         ${goal ? `<div class="bar" role="img" aria-label="${Math.round(Math.min(got / goal, 1) * 100)}% collected"><i style="width:${Math.min(got / goal, 1) * 100}%"></i></div>` : ''}
+         <div class="people">${rows}</div>`
+      : `<p class="empty">${hostHint('who has paid')}</p>`;
+    return `<section class="panel wide"><div class="panel-head"><span class="eyebrow">Money</span><h2>Who has paid</h2></div>${body}</section>`;
+  }
+
+  function payPanel() {
+    const rev = safeUrl(S.revolutLink), per = num(S.perPerson);
+    if (!rev && !S.revolutTag && !S.iban) return '';
+    const copyRow = (label, v) => `<div class="pay-row"><span class="pay-label">${label}</span><code class="pay-value">${esc(v)}</code><button class="btn small" data-act="copy" data-copy="${esc(v)}">Copy</button></div>`;
+    return `<section class="panel wide"><div class="panel-head"><span class="eyebrow">Send the money</span><h2>How to pay</h2></div>
+      ${per ? `<p>${money(per)} each: ${money(per / 2)} now, ${money(per / 2)} when we arrive.</p>` : ''}
+      <div class="pay">
+        <div class="pay-main">
+          ${rev ? `<p><a class="btn primary" href="${esc(rev)}" target="_blank" rel="noopener">Pay with Revolut ↗</a></p>
+            <p class="muted" style="font-size:.9rem">Works even if you don't have Revolut.</p>` : ''}
+          ${S.revolutTag ? copyRow('Revolut', S.revolutTag) : ''}
+          ${S.iban ? copyRow('IBAN', S.iban) : '<div class="pay-row"><span class="pay-label">IBAN</span><span class="muted">Coming soon</span></div>'}
+          ${S.payName ? copyRow('Name', S.payName) : ''}
+          ${S.bank ? `<div class="pay-row"><span class="pay-label">Bank</span><span>${esc(S.bank)}</span></div>` : ''}
+        </div>
+        ${rev ? `<figure class="qr"><img data-qr="${esc(rev)}" alt="QR code for ${esc(rev)}" width="132" height="132"><figcaption>Scan with your phone</figcaption></figure>` : ''}
+      </div></section>`;
+  }
+
+  function drawQR() {
+    const imgs = document.querySelectorAll('img[data-qr]');
+    if (!imgs.length) return;
+    const draw = () => imgs.forEach(img => { const q = qrcode(0, 'M'); q.addData(img.dataset.qr); q.make(); img.src = q.createDataURL(6, 2); });
+    if (window.qrcode) return draw();
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js';
+    s.onload = draw;
+    document.head.append(s);
+  }
+
+  async function copy(btn) {
+    try { await navigator.clipboard.writeText(btn.dataset.copy); toast('Copied ' + btn.dataset.copy); }
+    catch { const sel = getSelection(), r = document.createRange(); r.selectNodeContents(btn.previousElementSibling); sel.removeAllRanges(); sel.addRange(r); toast('Selected. Press copy on your device.'); }
+  }
+
+  function menuPanel() {
+    const list = S.menu || [];
+    const groups = KINDS.map(([k, label]) => {
+      const items = list.filter(m => (m.kind || 'other') === k);
+      if (!items.length) return '';
+      items.sort((a, b) => num(b.votes) - num(a.votes));
+      return `<div><h3>${label}</h3>${items.map(m => {
+        const v = num(m.votes);
+        return `<div class="dish"><span class="votes${v ? '' : ' zero'}" title="${v} vote${v === 1 ? '' : 's'}">${v}</span><span class="item">${esc(m.item)}</span><span class="lead"></span>${m.who ? `<span class="who">${esc(m.who)} makes it</span>` : '<span class="chip warn">Needs a cook</span>'}</div>`;
+      }).join('')}</div>`;
+    }).join('');
+    const intro = `<p class="muted">Suggest dishes and drinks in the group chat, vote for your favourites, and say if you'll make one. The list is updated from the chat. The number is the vote count.</p>`;
+    const body = list.length ? `<div class="menu-groups">${groups}</div>` : `<p class="empty">No ideas yet. Post the first one in the group chat.</p>`;
+    return `<section class="panel wide"><div class="panel-head"><span class="eyebrow">The table · poll</span><h2>Food &amp; drinks</h2></div>${intro}${body}</section>`;
+  }
+
+  function render() {
+    root.innerHTML = header() + `<div class="grid">${placePanel()}${santaPanel()}${payPanel()}${moneyPanel()}${menuPanel()}</div>`;
+    tick();
+    drawQR();
+  }
+
+  function tick() {
+    const el = document.getElementById('cd');
+    if (!el) return;
+    let s = Math.floor((midnight() - Date.now()) / 1000);
+    if (s <= 0) { el.innerHTML = `<span class="cheers">Happy New Year!</span>`; return; }
+    el.innerHTML = [[86400, 'days'], [3600, 'hours'], [60, 'min'], [1, 'sec']].map(([u, l]) => {
+      const v = Math.floor(s / u); s %= u;
+      return `<div class="unit"><span class="n">${u === 86400 ? v : String(v).padStart(2, '0')}</span><span class="u">${l}</span></div>`;
+    }).join('');
+  }
+  setInterval(tick, 1000);
+
+  // ---- night sky: twinkling stars, an occasional firework ----
+  function sky() {
+    const c = document.createElement('canvas');
+    c.id = 'sky'; c.setAttribute('aria-hidden', 'true');
+    document.body.prepend(c);
+    const ctx = c.getContext('2d');
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const COLORS = ['#FFE7B3', '#EBC77A', '#F7A6C4', '#9FD8FF', '#FFFFFF'];
+    let w, h, stars = [], sparks = [], next = 1200;
+    function size() {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      w = innerWidth; h = innerHeight;
+      c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      stars = Array.from({ length: Math.round(w * h / 9000) }, () => ({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.2 + 0.3, p: Math.random() * 6.28, s: 0.5 + Math.random() * 1.5 }));
+    }
+    function burst() {
+      const x = w * (0.15 + Math.random() * 0.7), y = h * (0.12 + Math.random() * 0.3), col = COLORS[Math.floor(Math.random() * COLORS.length)];
+      for (let i = 0; i < 46; i++) {
+        const a = (i / 46) * 6.28, v = 1.2 + Math.random() * 1.6;
+        sparks.push({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, life: 1, col });
+      }
+    }
+    let last = performance.now();
+    function frame(t) {
+      const dt = Math.min(t - last, 50); last = t;
+      ctx.clearRect(0, 0, w, h);
+      for (const s of stars) {
+        ctx.globalAlpha = still ? 0.7 : 0.35 + 0.65 * Math.abs(Math.sin(s.p + t / 1000 * s.s));
+        ctx.fillStyle = '#FFF6DE'; ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.28); ctx.fill();
+      }
+      if (!still) {
+        if ((next -= dt) <= 0) { burst(); next = 2600 + Math.random() * 3200; }
+        sparks = sparks.filter(p => p.life > 0);
+        for (const p of sparks) {
+          p.x += p.vx * dt / 16; p.y += p.vy * dt / 16; p.vy += 0.025 * dt / 16; p.vx *= 0.985; p.vy *= 0.985; p.life -= 0.011 * dt / 16;
+          ctx.globalAlpha = Math.max(p.life, 0) * 0.85; ctx.fillStyle = p.col;
+          ctx.beginPath(); ctx.arc(p.x, p.y, 1.6, 0, 6.28); ctx.fill();
+        }
+        requestAnimationFrame(frame);
+      }
+      ctx.globalAlpha = 1;
+    }
+    size(); addEventListener('resize', () => { size(); if (still) frame(performance.now()); });
+    requestAnimationFrame(frame);
+  }
+  sky();
+
+  function toast(msg) {
+    let t = document.querySelector('.toast');
+    if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); document.body.append(t); }
+    t.textContent = msg; t.hidden = !msg;
+  }
+
+  // ---- events ----
+  root.addEventListener('click', e => {
+    const b = e.target.closest('[data-act]');
+    if (!b) return;
+    if (b.dataset.act === 'copy') copy(b);
+  });
+
+  render();
+
+})();
+</script>
+
+</body>
+</html>

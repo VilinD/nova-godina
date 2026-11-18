@@ -231,6 +231,16 @@ a { color: var(--gold); }
 }
 #santa { grid-template-rows: auto 1fr; }
 #santa .santa { align-content: center; }
+/* winter road warning: the one panel that is meant to stand out */
+.panel.alert { border-color: rgba(255, 163, 135, 0.45); background: linear-gradient(160deg, rgba(255, 163, 135, 0.13), rgba(255, 163, 135, 0.03)); }
+.panel.alert::before { background: linear-gradient(90deg, transparent, rgba(255, 163, 135, 0.8), transparent); }
+.panel.alert .eyebrow { color: var(--warn); }
+.alert-head { display: flex; gap: 14px; align-items: center; }
+.alert-head svg { flex: none; width: 44px; height: 44px; }
+.tips { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 8px 24px; }
+.tips li { position: relative; padding-left: 26px; }
+.tips li::before { content: "❄"; position: absolute; left: 0; top: 0; color: var(--warn); }
+
 .toast {
   position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px));
   background: var(--gold-hi); color: var(--sky-deep); padding: 10px 18px; border-radius: 999px; font-weight: 700;
@@ -240,7 +250,7 @@ a { color: var(--gold); }
 @media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
 </style>
 <main id="root"></main>
-<script type="application/json" id="state">{"title":"New Year's Eve 2027","date":"2026-12-31","time":"20:00","note":"€120 each for all 3 nights: €60 now, €60 when we arrive.","stayFrom":"2026-12-31","nights":3,"place":"Guest house „Балканска песен“","address":"Voynezha village (с. Войнежа), about 30 km south of Veliko Tarnovo. The house is at the far end of the village; the last stretch is an old gravel road.","mapLink":"https://www.google.com/maps/place/%D0%9A%D1%8A%D1%89%D0%B0+%D0%B7%D0%B0+%D0%B3%D0%BE%D1%81%D1%82%D0%B8+%22%D0%91%D0%B0%D0%BB%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B0+%D0%BF%D0%B5%D1%81%D0%B5%D0%BD%22/@42.8805622,25.663463,17z/data=!3m1!4b1!4m6!3m5!1s0x40a8e700752b32d9:0x586c804ec94b0cc3!8m2!3d42.8805583!4d25.6660379!16s%2Fg%2F11w998wdcm?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D","housePhone":"0877 985 222","houseLink":"https://www.facebook.com/p/%D0%9A%D1%8A%D1%89%D0%B0-%D0%B7%D0%B0-%D0%B3%D0%BE%D1%81%D1%82%D0%B8-%D0%91%D0%B0%D0%BB%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B0-%D0%BF%D0%B5%D1%81%D0%B5%D0%BD-61565935772420/","santaLink":"","santaNote":"To be created…","currency":"€","revolutLink":"https://revolut.me/vilin","revolutTag":"@vilin","iban":"BG15STSA93000023261584","payName":"Vilin Dimitrov","bank":"DSK Bank","perPerson":120,"houseTotal":2800,"capacity":23,"money":[{"name":"Богдан","amount":60},{"name":"Митака","amount":60},{"name":"Ина","amount":60},{"name":"Красимира","amount":60},{"name":"Марто","amount":60},{"name":"Никол","amount":60},{"name":"Николай","amount":0},{"name":"Росен","amount":60},{"name":"Теодор","amount":60},{"name":"Теодора","amount":60},{"name":"Саша","amount":60},{"name":"Антония","amount":0},{"name":"Стан","amount":0},{"name":"Красимир","amount":60},{"name":"Красимира С.","amount":60},{"name":"Надя","amount":60},{"name":"Ники Бр.","amount":60},{"name":"Криса","amount":60},{"name":"Лидка","amount":60},{"name":"Вилин","amount":60},{"name":"Пепито / Дебора","amount":0},{"name":"Даниел","amount":0}],"menu":[]}</script>
+<script type="application/json" id="state">{"title":"New Year's Eve 2027","date":"2026-12-31","time":"20:00","note":"€120 each for all 3 nights: €60 now, €60 when we arrive.","stayFrom":"2026-12-31","nights":3,"place":"Guest house „Балканска песен“","address":"Voynezha village (с. Войнежа), about 30 km south of Veliko Tarnovo. The house is at the far end of the village; the last stretch is an old gravel road.","mapLink":"https://www.google.com/maps/place/%D0%9A%D1%8A%D1%89%D0%B0+%D0%B7%D0%B0+%D0%B3%D0%BE%D1%81%D1%82%D0%B8+%22%D0%91%D0%B0%D0%BB%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B0+%D0%BF%D0%B5%D1%81%D0%B5%D0%BD%22/@42.8805622,25.663463,17z/data=!3m1!4b1!4m6!3m5!1s0x40a8e700752b32d9:0x586c804ec94b0cc3!8m2!3d42.8805583!4d25.6660379!16s%2Fg%2F11w998wdcm?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D","housePhone":"0877 985 222","houseLink":"https://www.facebook.com/p/%D0%9A%D1%8A%D1%89%D0%B0-%D0%B7%D0%B0-%D0%B3%D0%BE%D1%81%D1%82%D0%B8-%D0%91%D0%B0%D0%BB%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B0-%D0%BF%D0%B5%D1%81%D0%B5%D0%BD-61565935772420/","road":{"title": "Winter road over Хаинбоаз", "text": "The house is past the Хаинбоаз (Hainboaz) pass. At the end of December there can be a lot of snow and ice on the pass, so come prepared.", "tips": ["Winter tyres in good condition. Check them before you go.", "Snow chains in the car. Practise putting them on once at home.", "A full tank, and leave early so you drive the pass in daylight.", "Check the road and the weather before you set off.", "A scraper, a blanket, water and a phone charger in the car.", "The last stretch to the house is a gravel road. Drive slowly."]},"santaLink":"","santaNote":"To be created…","currency":"€","revolutLink":"https://revolut.me/vilin","revolutTag":"@vilin","iban":"BG15STSA93000023261584","payName":"Vilin Dimitrov","bank":"DSK Bank","perPerson":120,"houseTotal":2800,"capacity":23,"money":[{"name":"Богдан","amount":60},{"name":"Митака","amount":60},{"name":"Ина","amount":60},{"name":"Красимира","amount":60},{"name":"Марто","amount":60},{"name":"Никол","amount":60},{"name":"Николай","amount":0},{"name":"Росен","amount":60},{"name":"Теодор","amount":60},{"name":"Теодора","amount":60},{"name":"Саша","amount":60},{"name":"Антония","amount":0},{"name":"Стан","amount":0},{"name":"Красимир","amount":60},{"name":"Красимира С.","amount":60},{"name":"Надя","amount":60},{"name":"Ники Бр.","amount":60},{"name":"Криса","amount":60},{"name":"Лидка","amount":60},{"name":"Вилин","amount":60},{"name":"Пепито / Дебора","amount":0},{"name":"Даниел","amount":0}],"menu":[]}</script>
 <script id="app">
 (() => {
   const S = JSON.parse(document.getElementById('state').textContent);
@@ -269,7 +279,7 @@ a { color: var(--gold); }
       <div class="countdown" id="cd" aria-label="Time until midnight"></div>
       ${stay()}
       ${S.note ? `<p class="note">${esc(S.note)}</p>` : ''}
-      <nav class="jump" aria-label="Sections">${[['place', 'The place'], ['santa', 'Secret Santa'], ['pay', 'How to pay'], ['paid', 'Who has paid'], ['food', 'Food & drinks']]
+      <nav class="jump" aria-label="Sections">${[['road', 'Winter road'], ['place', 'The place'], ['santa', 'Secret Santa'], ['pay', 'How to pay'], ['paid', 'Who has paid'], ['food', 'Food & drinks']]
         .map(([id, l]) => `<a href="#${id}">${esc(l)}</a>`).join('')}</nav>
     </header>`;
   }
@@ -301,6 +311,17 @@ a { color: var(--gold); }
            ${house ? `<a class="btn" href="${esc(house)}" target="_blank" rel="noopener">See the house ↗</a>` : ''}</p>` : ''}`
       : `<p class="empty">${hostHint('the place')}</p>`;
     return `<section class="panel" id="place"><div class="panel-head"><span class="eyebrow">Where</span><h2>The place</h2></div>${body}</section>`;
+  }
+
+  function roadPanel() {
+    const r = S.road;
+    if (!r) return '';
+    const icon = `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 45 42H3z" fill="rgba(255,163,135,.18)" stroke="#FFA387" stroke-width="3" stroke-linejoin="round"/><path d="M24 18v12" stroke="#FFA387" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="36" r="2.4" fill="#FFA387"/></svg>`;
+    return `<section class="panel wide alert" id="road" role="note">
+      <div class="alert-head">${icon}<div class="panel-head"><span class="eyebrow">Read before you drive</span><h2>${esc(r.title)}</h2></div></div>
+      <p>${esc(r.text)}</p>
+      ${(r.tips || []).length ? `<ul class="tips">${r.tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+    </section>`;
   }
 
   function santaPanel() {
@@ -395,7 +416,7 @@ a { color: var(--gold); }
   }
 
   function render() {
-    root.innerHTML = header() + `<div class="grid">${placePanel()}${santaPanel()}${payPanel()}${moneyPanel()}${menuPanel()}</div>`
+    root.innerHTML = header() + `<div class="grid">${roadPanel()}${placePanel()}${santaPanel()}${payPanel()}${moneyPanel()}${menuPanel()}</div>`
       + `<p class="foot">Last updated ${new Date(document.lastModified).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })}</p>`;
     tick();
     drawQR();
